@@ -1,2 +1,3 @@
-# Lita-Capstone-Project
-Here is a documentation of the Analysis on Capstone Data
+# LITA_CAPSTONE_PROJECT
+## ANALYSIS  CUSTOMER DATA
+### PROJECT TITLE: Customer Segmentation for a Subscription Service 
