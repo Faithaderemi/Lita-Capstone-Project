@@ -33,7 +33,7 @@ This Primary Customer Data was provided by the Incubator Hub for Analysis during
 
 
   #### Data Analysis
-  *Microsoft Excel*
+  **Microsoft Excel**
   
   ![image](https://github.com/user-attachments/assets/af629914-c0e3-46ee-b470-be0f4e444986)
 
@@ -47,9 +47,25 @@ This Primary Customer Data was provided by the Incubator Hub for Analysis during
   ![image](https://github.com/user-attachments/assets/a159e4e3-77fa-4d15-ab8d-1d17a77bc4e7)
 
 
+  ![image](https://github.com/user-attachments/assets/a19487cd-5c39-4aa3-b988-da7503e9adf6)
+
+
+  ![image](https://github.com/user-attachments/assets/5967d0ea-9181-448a-89c8-8d9aa79b6c34)
+
+
+  ![image](https://github.com/user-attachments/assets/6a674eb3-7f9c-4209-b603-c54cc2fe1a6d)
+
+
+  ![image](https://github.com/user-attachments/assets/9298a1c3-07ca-4024-948b-be3c7e519cd5)
+
+
+  ![image](https://github.com/user-attachments/assets/8c2b71dc-fe57-412a-b85f-3e21962688f7)
+
+
+**SQL Queries**
+  
   These are the Various Queries executed to answer the questions asked under Data Exploration, in their respective numbers.
 
-*SQL Queries*
 - Total number of customers from each region.
   
 SELECT Region, COUNT(CustomerID) AS NumberOfCustomers
