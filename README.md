@@ -33,6 +33,20 @@ This Primary Customer Data was provided by the Incubator Hub for Analysis during
 
 
   #### Data Analysis
+  *Microsoft Excel*
+  
+  ![image](https://github.com/user-attachments/assets/af629914-c0e3-46ee-b470-be0f4e444986)
+
+
+  ![image](https://github.com/user-attachments/assets/4dbe4b3e-a71e-474f-94dc-829c55f8c00f)
+
+
+  ![image](https://github.com/user-attachments/assets/66be636c-20c7-481e-9e6c-feda0dd42a21)
+
+
+  ![image](https://github.com/user-attachments/assets/a159e4e3-77fa-4d15-ab8d-1d17a77bc4e7)
+
+
   These are the Various Queries executed to answer the questions asked under Data Exploration, in their respective numbers.
 
 *SQL Queries*
@@ -71,6 +85,8 @@ WHERE DATEDIFF(MONTH, SubscriptionStart, SubscriptionEnd) > 12;
 
 SELECT SubscriptionType, SUM(Revenue) AS TotalRevenue
 FROM [dbo].[Customer_data2]
+
+
 GROUP BY SubscriptionType;```
 
 - Top 3 regions by subscription cancellation
