@@ -61,6 +61,10 @@ This Primary Customer Data was provided by the Incubator Hub for Analysis during
 
   ![image](https://github.com/user-attachments/assets/8c2b71dc-fe57-412a-b85f-3e21962688f7)
 
+			
+  ![image](https://github.com/user-attachments/assets/9ddf37f1-6afd-4caa-93f5-09f0ea5e2d3b)
+
+			
 
 **SQL Queries**
   
@@ -117,6 +121,10 @@ SELECT
     SUM(CASE WHEN Canceled = 1 THEN 1 ELSE 0 END) AS CanceledSubscriptions
 FROM [dbo].[Customer_data2]
 
+
+![Screenshot (16)](https://github.com/user-attachments/assets/643f1789-ead3-495f-b5d8-359ceb0724d0)
+Here are the results of the SQL queries above
+
   #### Data Visualization
   **POWER BI**
 
@@ -156,3 +164,5 @@ FROM [dbo].[Customer_data2]
 
 
 ![Screenshot (8)](https://github.com/user-attachments/assets/75f098e8-fc2e-4d72-b909-1878a72ccca3)
+
+
