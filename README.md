@@ -224,28 +224,32 @@ The Data was used to explore the Following solution that can give insight into b
   These are the Various Queries executed to answer the questions asked under Data Exploration, in their respective numbers.
 
 
-  ------1. retrieve the total sales for each product category.-------------
+**1. Retrieve the total sales for each product category**
 
 - SELECT product, SUM(TOTALSALESORREVENUE) AS TOTALSALESBYPRODUCT FROM [dbo].[SalesData WD]
 GROUP BY Product
 order by 2 desc
 
-----2. find the number of sales transactions in each region----
+  **2. Find the number of sales transactions in each region**
+     
 - select region, count(Orderid) as salestransactionbyregion from [dbo].[SalesData WD]
 group by region
 order by 2 desc
 
------3. find the highest-selling product by total sales value-----
+  **3. Find the highest-selling product by total sales value**
+
 - select top 1 Product, sum(TOTALSALESORREVENUE) as TotalSalesValue from [dbo].[SalesData WD]
 group by product
 order by 2 desc
 
------4.calculate total revenue per product.
+  4. calculate total revenue per product.
+  
 - SELECT PRODUCT, SUM(TOTALSALESORREVENUE) AS TOTALREVENUEBYPRODUCT FROM [dbo].[SalesData WD]
 GROUP BY PRODUCT
 order by 2 desc
 
------5. to get Monthly sales total in current year------
+  **5. To get Monthly sales total in current year**
+     
 - select Product As Productsold, year (OrderDate) as 'Year', month (OrderDate) as 'Months', 
 Sum(Totalsalesorrevenue) as salestotalCY from [dbo].[SalesData WD]
 where year (orderdate)='2024'
@@ -253,14 +257,16 @@ group by Product, Month (OrderDate), year (OrderDate)
 order by 3, 4 desc
 
 
-----6. find the top 5 customers by total purchase amount---------
+  **6. Find the top 5 customers by total purchase amount**
+
 - select top 5 Customer_Id, Sum(TotalSalesorRevenue) As TotalPurchaseAmountbyCustomer from [dbo].[SalesData WD]
 Group By Customer_Id
 order by 2 desc
 
 
 
--- 7. calculate the percentage of total sales contributed by each region.---
+  **7. Calculate the percentage of total sales contributed by each region**
+
 - SELECT Region, SUM(TotalSalesorRevenue) AS RegionTotalSales,
 FORMAT(ROUND((SUM(TotalSalesorRevenue) / CAST((SELECT SUM(TotalSalesorRevenue) FROM [dbo].[SalesData WD]) AS DECIMAL(10,2)) * 100), 1), '0.#') 
 AS PercentageOfTotalSales
@@ -268,9 +274,15 @@ FROM [dbo].[SalesData WD]
 GROUP BY Region
 ORDER BY PercentageOfTotalSales DESC
 
--- 8. identify products with no sales in the last quarter.---
+  **8. Identify products with no sales in the last quarter**
+   
 SELECT Product FROM [dbo].[SalesData WD]
 GROUP BY Product
 HAVING SUM(CASE 
 WHEN OrderDate BETWEEN '2024-06-01' AND '2024-08-31' 
 THEN 1 ELSE 0 END) = 0
+
+![Screenshot (17)](https://github.com/user-attachments/assets/adea51b1-8d2c-4533-86a9-92b5145952d7)
+
+
+![Screenshot (18)](https://github.com/user-attachments/assets/8482c76d-aa73-4821-8983-3429e057dab3)
