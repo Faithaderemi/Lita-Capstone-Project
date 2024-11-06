@@ -1,6 +1,6 @@
 # LITA_CAPSTONE_PROJECT
 ---
-## ANALYSIS  CUSTOMER DATA
+## ANALYSIS FOR CUSTOMER DATA
 ---
 ### PROJECT TITLE: Customer Segmentation for a Subscription Service 
 ---
@@ -145,24 +145,132 @@ Here are the results of the SQL queries above
 ![Screenshot (13)](https://github.com/user-attachments/assets/dbf5ed15-ff5e-4e12-b5c6-086dbbb8204c)
 
 
-![Screenshot (14)](https://github.com/user-attachments/assets/7ef3762f-8a19-4d96-bb32-286d04bb0f29)
 
 
-![Screenshot (3)](https://github.com/user-attachments/assets/b35acb14-deff-45ab-840b-68f7a0a7ec10)
 
 
-![Screenshot (4)](https://github.com/user-attachments/assets/efa7df64-f12d-4c37-9fb5-956d22c2df32)
 
 
-![Screenshot (5)](https://github.com/user-attachments/assets/6b4609e2-11c5-452a-ae2a-b8aa338399ed)
+# PROJECT 2
+
+## ANALYSIS FOR SALES DATA
+---
+### PROJECT TITLE: Sales Performance Analysis for a Retail Store 
+---
+#### PROJECT OVERVIEW
+---
+In this project, the task is to analyze the sales performance of a retail store. 
+Sales data will be explored to uncover key insights such as top-selling products, regional 
+performance, and monthly sales trends. The goal is to produce an interactive Power BI 
+dashboard that highlights these findings.
+---
+#### Data Sources 
+---
+This Primary Sales Data was provided by the Incubator Hub for Analysis during LITA Data Analysis Training.
+#### Tools Used
+---
+- Microsoft Exel was used to analyze Sales data using pivot tables to summarize total sales by product, region, and month.
+  
+- Structured Query Language for querying Data
+
+- PowerBI for Data Visualization
+
+  #### Data Exploration
+
+The Data was used to explore the Following solution that can give insight into better decision making answering questions like
+
+- Retrieve the total sales for each product category.
+- Find the number of sales transactions in each region.
+- Find the highest-selling product by total sales value.
+- Calculate total revenue per product.
+- Calculate monthly sales totals for the current year.
+- Find the top 5 customers by total purchase amount.
+- Calculate the percentage of total sales contributed by each region.
+- Identify products with no sales in the last quarter.
+  
+ #### Data Analysis
+  **Microsoft Excel**
 
 
-![Screenshot (6)](https://github.com/user-attachments/assets/6314f47a-6360-45a8-9ccf-0d968ecf4aa5)
+![image](https://github.com/user-attachments/assets/b0588e78-e362-41c5-8795-107a61455bd8)
 
 
-![Screenshot (7)](https://github.com/user-attachments/assets/b614cc0d-d8ee-4141-bfaa-fdba5d136345)
+
+![image](https://github.com/user-attachments/assets/4f054993-4eab-499e-9897-c57d5dc35c8e)
 
 
-![Screenshot (8)](https://github.com/user-attachments/assets/75f098e8-fc2e-4d72-b909-1878a72ccca3)
+
+![image](https://github.com/user-attachments/assets/1626b244-79ad-47cd-8c44-eb45be6800d1)
 
 
+
+![image](https://github.com/user-attachments/assets/2c9e227b-04f2-4090-ac7f-3fd289f05ff9)
+
+
+
+![image](https://github.com/user-attachments/assets/97d8b74e-ba26-4282-ad65-48a1402420cc)
+
+
+
+![image](https://github.com/user-attachments/assets/6831696c-a579-45e2-a541-c75efd1ef9a3)
+
+
+![image](https://github.com/user-attachments/assets/05b35f5f-7f46-4f5f-8dfc-d47031015201)
+
+
+
+**SQL Queries**
+  
+  These are the Various Queries executed to answer the questions asked under Data Exploration, in their respective numbers.
+
+
+  ------1. retrieve the total sales for each product category.-------------
+
+- SELECT product, SUM(TOTALSALESORREVENUE) AS TOTALSALESBYPRODUCT FROM [dbo].[SalesData WD]
+GROUP BY Product
+order by 2 desc
+
+----2. find the number of sales transactions in each region----
+- select region, count(Orderid) as salestransactionbyregion from [dbo].[SalesData WD]
+group by region
+order by 2 desc
+
+-----3. find the highest-selling product by total sales value-----
+- select top 1 Product, sum(TOTALSALESORREVENUE) as TotalSalesValue from [dbo].[SalesData WD]
+group by product
+order by 2 desc
+
+-----4.calculate total revenue per product.
+- SELECT PRODUCT, SUM(TOTALSALESORREVENUE) AS TOTALREVENUEBYPRODUCT FROM [dbo].[SalesData WD]
+GROUP BY PRODUCT
+order by 2 desc
+
+-----5. to get Monthly sales total in current year------
+- select Product As Productsold, year (OrderDate) as 'Year', month (OrderDate) as 'Months', 
+Sum(Totalsalesorrevenue) as salestotalCY from [dbo].[SalesData WD]
+where year (orderdate)='2024'
+group by Product, Month (OrderDate), year (OrderDate)
+order by 3, 4 desc
+
+
+----6. find the top 5 customers by total purchase amount---------
+- select top 5 Customer_Id, Sum(TotalSalesorRevenue) As TotalPurchaseAmountbyCustomer from [dbo].[SalesData WD]
+Group By Customer_Id
+order by 2 desc
+
+
+
+-- 7. calculate the percentage of total sales contributed by each region.---
+- SELECT Region, SUM(TotalSalesorRevenue) AS RegionTotalSales,
+FORMAT(ROUND((SUM(TotalSalesorRevenue) / CAST((SELECT SUM(TotalSalesorRevenue) FROM [dbo].[SalesData WD]) AS DECIMAL(10,2)) * 100), 1), '0.#') 
+AS PercentageOfTotalSales
+FROM [dbo].[SalesData WD]
+GROUP BY Region
+ORDER BY PercentageOfTotalSales DESC
+
+-- 8. identify products with no sales in the last quarter.---
+SELECT Product FROM [dbo].[SalesData WD]
+GROUP BY Product
+HAVING SUM(CASE 
+WHEN OrderDate BETWEEN '2024-06-01' AND '2024-08-31' 
+THEN 1 ELSE 0 END) = 0
