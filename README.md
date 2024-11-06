@@ -99,10 +99,7 @@ WHERE DATEDIFF(MONTH, SubscriptionStart, SubscriptionEnd) > 12;
 
 - Total Revenue by subscription type
 
-SELECT SubscriptionType, SUM(Revenue) AS TotalRevenue
-FROM [dbo].[Customer_data2]
-
-
+SELECT SubscriptionType, SUM(Revenue) AS TotalRevenue FROM [dbo].[Customer_data2]
 GROUP BY SubscriptionType;```
 
 - Top 3 regions by subscription cancellation
@@ -121,4 +118,41 @@ SELECT
 FROM [dbo].[Customer_data2]
 
   #### Data Visualization
+  **POWER BI**
+
+  These are the various Visualizations created with Power BI to give insight into the Data.
   
+![Screenshot (9)](https://github.com/user-attachments/assets/79dfafbe-3511-4255-b38b-42c9c0ee28b0)
+
+
+![Screenshot (10)](https://github.com/user-attachments/assets/b0009a12-6fff-4e16-aeda-0dae32d30ef8)
+
+
+![Screenshot (11)](https://github.com/user-attachments/assets/217ed432-1383-4859-bcc9-1c7dd8c28503)
+
+
+![Screenshot (12)](https://github.com/user-attachments/assets/9262ad38-f40c-40a9-903e-aa2c3c8067da)
+
+
+![Screenshot (13)](https://github.com/user-attachments/assets/dbf5ed15-ff5e-4e12-b5c6-086dbbb8204c)
+
+
+![Screenshot (14)](https://github.com/user-attachments/assets/7ef3762f-8a19-4d96-bb32-286d04bb0f29)
+
+
+![Screenshot (3)](https://github.com/user-attachments/assets/b35acb14-deff-45ab-840b-68f7a0a7ec10)
+
+
+![Screenshot (4)](https://github.com/user-attachments/assets/efa7df64-f12d-4c37-9fb5-956d22c2df32)
+
+
+![Screenshot (5)](https://github.com/user-attachments/assets/6b4609e2-11c5-452a-ae2a-b8aa338399ed)
+
+
+![Screenshot (6)](https://github.com/user-attachments/assets/6314f47a-6360-45a8-9ccf-0d968ecf4aa5)
+
+
+![Screenshot (7)](https://github.com/user-attachments/assets/b614cc0d-d8ee-4141-bfaa-fdba5d136345)
+
+
+![Screenshot (8)](https://github.com/user-attachments/assets/75f098e8-fc2e-4d72-b909-1878a72ccca3)
