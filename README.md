@@ -286,3 +286,20 @@ THEN 1 ELSE 0 END) = 0
 
 
 ![Screenshot (18)](https://github.com/user-attachments/assets/8482c76d-aa73-4821-8983-3429e057dab3)
+
+
+ #### Data Visualization
+  **POWER BI**
+
+  These are the various Visualizations created with Power BI to give insight into the Data.
+  
+  ![Screenshot (24)](https://github.com/user-attachments/assets/2bf4b5f1-bc38-4347-90b0-e2a54f7d65ae)
+
+
+  ![Screenshot (25)](https://github.com/user-attachments/assets/45e3f35f-008f-4df6-ada2-4b96d2762a11)
+
+
+  ![Screenshot (26)](https://github.com/user-attachments/assets/0ddb9078-5785-4a01-8147-b825eb7b696c)
+
+
+  ![Screenshot (27)](https://github.com/user-attachments/assets/6239424e-0c7f-41f1-82a4-7ae80efa2638)
